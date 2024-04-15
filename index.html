@@ -1,26 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Image Redirect</title>
-  <script>
-    // Function to get the current route and redirect to the corresponding image
-    function redirectToImage() {
-      // Get the current pathname, stripping the leading slash
-      var currentPath = window.location.pathname.substring(1);
-
-      // Construct the new image URL
-      var imageUrl = "https://raw.githubusercontent.com/thumbnailssources/thumbnail/main/" + currentPath;
-
-      // Redirect to the new image URL
-      window.location.href = imageUrl;
-    }
-
-    // Call the redirect function as soon as the script loads
-    redirectToImage();
-  </script>
-</head>
-<body>
-  <!-- Display a message while redirection takes place -->
-  <p>Redirecting to image...</p>
-</body>
+  <head>
+    <title>Thumbnails</title>
+  </head>
+  <body>
+    <img src="https://raw.githubusercontent.com/thumbnailssources/thumbnail/main/{{ page.url | split:'/' | last }}" alt="Thumbnail">
+  </body>
 </html>
