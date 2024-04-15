@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Route Display</title>
-  </head>
-  <body>
-    <h1>Route Display lol</h1>
-    <p>You are currently on route {{ page.url }}</p>
-  </body>
+<head>
+  <title>Image Display</title>
+</head>
+<body>
+  <img id="image" src="" alt="Image">
+
+  <script>
+    // Get the current path from the URL
+    const path = window.location.pathname;
+
+    // Set the image source based on the path
+    const imageSrc = `https://raw.githubusercontent.com/thumbnailssources/thumbnail/main${path}`;
+    document.getElementById('image').src = imageSrc;
+  </script>
+</body>
 </html>
