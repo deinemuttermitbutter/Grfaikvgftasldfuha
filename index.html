@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Redirect</title>
+    <script>
+        var path = window.location.pathname;
+
+        var imageFilename = path.substring(path.lastIndexOf('/') + 1);
+
+        window.onload = function() {
+            var imageUrl = "https://raw.githubusercontent.com/thumbnailssources/thumbnail/main/" + imageFilename;
+            document.getElementById("image").src = imageUrl;
+        }
+    </script>
+</head>
+<body>
+    <img id="image" alt="Dynamic Image" />
+</body>
+</html>
