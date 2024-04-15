@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Redirect</title>
-    <script>
-        var path = window.location.pathname;
+  <title>Image Redirect</title>
+  <script>
+    // Function to get the current route and redirect to the corresponding image
+    function redirectToImage() {
+      // Get the current pathname, stripping the leading slash
+      var currentPath = window.location.pathname.substring(1);
 
-        var imageFilename = path.substring(path.lastIndexOf('/') + 1);
+      // Construct the new image URL
+      var imageUrl = "https://raw.githubusercontent.com/thumbnailssources/thumbnail/main/" + currentPath;
 
-        window.onload = function() {
-            var imageUrl = "https://raw.githubusercontent.com/thumbnailssources/thumbnail/main/" + imageFilename;
-            document.getElementById("image").src = imageUrl;
-        }
-    </script>
+      // Redirect to the new image URL
+      window.location.href = imageUrl;
+    }
+
+    // Call the redirect function as soon as the script loads
+    redirectToImage();
+  </script>
 </head>
 <body>
-    <img id="image" alt="Dynamic Image" />
+  <!-- Display a message while redirection takes place -->
+  <p>Redirecting to image...</p>
 </body>
 </html>
