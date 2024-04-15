@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Print Current Route</title>
+  <title>Route Display</title>
+  <script>
+    function displayRoute() {
+      const route = window.location.pathname;
+      document.getElementById('route').textContent = `You are currently on route ${route}`;
+    }
+  </script>
 </head>
-<body>
-    <h1>Current Route:</h1>
-    <div id="route"></div>
-
-    <script>
-        // Function to get current route
-        function getCurrentRoute() {
-            return window.location.pathname; // This will give you the current path
-        }
-
-        // Setting the current route in the HTML
-        document.getElementById('route').textContent = 'Route: ' + getCurrentRoute();
-    </script>
+<body onload="displayRoute()">
+  <h1>Route Display</h1>
+  <p id="route"></p>
 </body>
 </html>
